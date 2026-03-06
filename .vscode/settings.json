@@ -1,0 +1,8 @@
+{
+  "yaml.schemas": {
+    "schema/wiring.schema.json": ["**/control.yaml", "**/readout_*.yaml"],
+    "schema/metadata.schema.json": ["**/metadata.yaml"]
+  }
+}
+
+

@@ -1,0 +1,46 @@
+# Readout return line wiring configuration (flat format)
+
+lines:
+  - line_id: RR00
+    qubits: [Q00, Q01, Q02, Q03]
+    stages:
+      MXC:
+        - type: isolator
+          model: QCI-CIC4-12
+        - type: isolator
+          model: QCI-CIC4-12
+      CP:
+        - type: isolator
+          model: QCI-CIC4-12
+      4K:
+        - type: amplifier
+          model: LNF-LNC4_8C
+          amplifier_type: HEMT
+          gain_dB: 38
+      RT:
+        - type: amplifier
+          model: MITEQ-AFS3
+          amplifier_type: RT
+          gain_dB: 30
+
+  - line_id: RR01
+    qubits: [Q04, Q05, Q06, Q07]
+    stages:
+      MXC:
+        - type: isolator
+          model: QCI-CIC4-12
+        - type: isolator
+          model: QCI-CIC4-12
+      CP:
+        - type: isolator
+          model: QCI-CIC4-12
+      4K:
+        - type: amplifier
+          model: LNF-LNC4_8C
+          amplifier_type: HEMT
+          gain_dB: 38
+      RT:
+        - type: amplifier
+          model: MITEQ-AFS3
+          amplifier_type: RT
+          gain_dB: 30

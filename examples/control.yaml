@@ -1,0 +1,42 @@
+# Control line wiring configuration (module format)
+
+modules:
+  control_standard:
+    stages:
+      RT:
+        - XMA-10dB
+      50K:
+        - XMA-10dB
+      4K:
+        - XMA-20dB
+      MXC:
+        - XMA-20dB
+        - Eccosorb
+
+lines:
+  - line_id: C00
+    qubit: Q00
+    module: control_standard
+
+  - line_id: C01
+    qubit: Q01
+    module: control_standard
+
+  - line_id: C02
+    qubit: Q02
+    module: control_standard
+    stages:
+      4K:
+        add:
+          - LPF-KL
+
+  - line_id: C03
+    qubit: Q03
+    module: control_standard
+    stages:
+      4K:
+        remove:
+          - XMA-20dB
+        add:
+          - XMA-10dB
+          - LPF-KL

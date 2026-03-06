@@ -1,0 +1,38 @@
+# Component catalog
+# Define reusable component references by key name.
+
+XMA-10dB:
+  type: attenuator
+  model: XMA-2082-6431-10
+  value_dB: 10
+
+XMA-20dB:
+  type: attenuator
+  model: XMA-2082-6431-20
+  value_dB: 20
+
+LPF-KL:
+  type: filter
+  model: KL-Lowpass-12G
+  filter_type: Lowpass
+
+Eccosorb:
+  type: filter
+  model: Eccosorb-CR110
+  filter_type: Eccosorb
+
+LNF-HEMT:
+  type: amplifier
+  model: LNF-LNC4_8C
+  amplifier_type: HEMT
+  gain_dB: 38
+
+RT-AMP:
+  type: amplifier
+  model: MITEQ-AFS3
+  amplifier_type: RT
+  gain_dB: 30
+
+QCI-Isolator:
+  type: isolator
+  model: QCI-CIC4-12

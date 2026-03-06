@@ -1,0 +1,23 @@
+# Readout send line wiring configuration (module format)
+
+modules:
+  readout_send_standard:
+    stages:
+      RT:
+        - XMA-10dB
+      50K:
+        - XMA-10dB
+      4K:
+        - XMA-20dB
+      MXC:
+        - XMA-20dB
+        - Eccosorb
+
+lines:
+  - line_id: RS00
+    qubits: [Q00, Q01, Q02, Q03]
+    module: readout_send_standard
+
+  - line_id: RS01
+    qubits: [Q04, Q05, Q06, Q07]
+    module: readout_send_standard

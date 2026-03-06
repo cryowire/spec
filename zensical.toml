@@ -1,0 +1,18 @@
+[project]
+site_name = "cryo-wiring-spec"
+site_description = "Specification for dilution refrigerator wiring configuration data"
+site_url = "https://cryo-wiring.github.io/spec/"
+nav = [
+  {"Home" = "index.md"},
+  {"Guide" = [
+    "guide/directory-structure.md",
+    "guide/temperature-stages.md",
+    "guide/component-types.md",
+    "guide/line-configuration.md",
+    "guide/examples.md",
+  ]},
+  {"Schema Reference" = [
+    "reference/wiring-schema.md",
+    "reference/metadata-schema.md",
+  ]},
+]

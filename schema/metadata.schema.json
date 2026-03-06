@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cooldown Metadata",
+  "description": "Schema for defining dilution refrigerator cooldown metadata",
+  "type": "object",
+  "required": ["cooldown_id", "date", "fridge"],
+  "properties": {
+    "cooldown_id": {
+      "type": "string",
+      "pattern": "^cd\\d{3}$",
+      "description": "Cooldown identifier (e.g., cd001)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Cooldown date (YYYY-MM-DD)"
+    },
+    "fridge": {
+      "type": "string",
+      "description": "Fridge name"
+    },
+    "operator": {
+      "type": "string",
+      "description": "Operator name"
+    },
+    "purpose": {
+      "type": "string",
+      "description": "Purpose of the cooldown"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes"
+    }
+  },
+  "additionalProperties": false
+}

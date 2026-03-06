@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wiring Configuration",
+  "description": "Schema for defining dilution refrigerator wiring configurations",
+  "type": "object",
+  "required": ["lines"],
+  "properties": {
+    "modules": {
+      "type": "object",
+      "description": "Reusable module definitions",
+      "additionalProperties": {
+        "$ref": "#/$defs/module"
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/line"
+      }
+    }
+  },
+  "$defs": {
+    "module": {
+      "type": "object",
+      "required": ["stages"],
+      "properties": {
+        "stages": {
+          "$ref": "#/$defs/stage_components",
+          "description": "Component definitions per stage"
+        }
+      }
+    },
+    "stage_components": {
+      "type": "object",
+      "description": "Component list keyed by stage name",
+      "propertyNames": {
+        "$ref": "#/$defs/stage"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/component_ref"
+        }
+      }
+    },
+    "component_ref": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "Component key (defined in components.yaml)"
+        },
+        {
+          "type": "object",
+          "required": ["type", "model"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["attenuator", "filter", "isolator", "amplifier"],
+              "description": "Component type"
+            },
+            "model": {
+              "type": "string",
+              "description": "Model number"
+            },
+            "serial": {
+              "type": "string",
+              "description": "Serial number"
+            },
+            "value_dB": {
+              "type": "number",
+              "description": "Attenuation value in dB (for attenuator)"
+            },
+            "gain_dB": {
+              "type": "number",
+              "description": "Gain in dB (for amplifier)"
+            },
+            "filter_type": {
+              "type": "string",
+              "description": "Filter type (e.g., eccosorb)"
+            },
+            "amplifier_type": {
+              "type": "string",
+              "description": "Amplifier type (e.g., HEMT)"
+            }
+          }
+        }
+      ]
+    },
+    "line": {
+      "type": "object",
+      "required": ["line_id"],
+      "properties": {
+        "line_id": {
+          "type": "string",
+          "pattern": "^(C|RS|RR)\\d+$",
+          "description": "Line identifier (C00-C63, RS00-RS15, or RR00-RR15)"
+        },
+        "qubit": {
+          "type": "string",
+          "pattern": "^Q\\d+$",
+          "description": "Associated qubit (for control lines)"
+        },
+        "qubits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^Q\\d+$"
+          },
+          "description": "Associated qubits (for readout lines, 4-multiplexed)"
+        },
+        "stages": {
+          "$ref": "#/$defs/line_stages",
+          "description": "Per-stage components (flat format) or overrides (module format)"
+        },
+        "module": {
+          "type": "string",
+          "description": "Referenced module name"
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["stages"],
+          "properties": {
+            "module": false
+          }
+        },
+        {
+          "required": ["module"]
+        }
+      ]
+    },
+    "line_stages": {
+      "type": "object",
+      "description": "Per-stage components or overrides",
+      "propertyNames": {
+        "$ref": "#/$defs/stage"
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/component_ref"
+            },
+            "description": "Component list (flat format)"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "add": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/component_ref"
+                },
+                "description": "Components to add (key or inline definition)"
+              },
+              "remove": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "description": "Component key to remove"
+                    },
+                    {
+                      "type": "object",
+                      "required": ["model"],
+                      "properties": {
+                        "model": {
+                          "type": "string",
+                          "description": "Model number of component to remove"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "description": "Components to remove (by key or model number)"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Override (add/remove)"
+          }
+        ]
+      }
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["RT", "50K", "4K", "Still", "CP", "MXC"],
+      "description": "Temperature stage"
+    }
+  }
+}
