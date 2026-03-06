@@ -73,16 +73,26 @@ All components **must** be defined in a `components.yaml` catalog and referenced
 
 ```yaml
 # components.yaml
+XMA-10dB:
+  type: attenuator
+  model: XMA-2082-6431-10
+  value_dB: 10
+
 XMA-20dB:
   type: attenuator
   model: XMA-2082-6431-20
   value_dB: 20
 
+K&L-LPF:
+  type: filter
+  model: K&L-5VLF
+  filter_type: Lowpass
+
 LNF-HEMT:
   type: amplifier
-  model: LNF-LNC4_8C
+  model: LNF-LNC03_14A
   amplifier_type: HEMT
-  gain_dB: 38
+  gain_dB: 40
 ```
 
 These keys are then used in wiring files — both in module definitions and per-line overrides (`add` / `remove`):
@@ -92,8 +102,10 @@ These keys are then used in wiring files — both in module definitions and per-
 modules:
   ctrl:
     stages:
+      50K:
+        - XMA-10dB       # ← catalog key reference
       4K:
-        - XMA-20dB       # ← catalog key reference
+        - XMA-20dB
       MXC:
         - XMA-20dB
         - Eccosorb
@@ -103,9 +115,9 @@ lines:
     qubit: Q00
     module: ctrl
     stages:
-      4K:
+      Still:
         add:
-          - LPF-KL       # ← catalog key reference in override
+          - K&L-LPF       # ← catalog key reference in override
 ```
 
 Centralizing component definitions in the catalog ensures consistency across all wiring files and makes it easy to update a component's properties in one place.

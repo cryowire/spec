@@ -17,7 +17,7 @@ Lines can reference a named module that defines the default components at each s
 
 ```yaml
 modules:
-  control_standard:
+  ctrl:
     stages:
       50K:
         - XMA-10dB
@@ -25,22 +25,23 @@ modules:
         - XMA-20dB
       MXC:
         - XMA-20dB
+        - Eccosorb
 
 lines:
   - line_id: C00
     qubit: Q00
-    module: control_standard
+    module: ctrl
+    stages:
+      Still:
+        add:
+          - K&L-LPF
 
   - line_id: C01
     qubit: Q01
-    module: control_standard
-    stages:
-      4K:
-        add:
-          - LPF-KL
+    module: ctrl
 ```
 
-In this example, `C01` inherits everything from `control_standard` but adds an extra filter at the `4K` stage.
+In this example, `C00` inherits everything from `ctrl` but adds a lowpass filter at the `Still` stage.
 
 ### Override Operations
 
@@ -56,7 +57,6 @@ stages:
       - XMA-20dB        # remove by component key
     add:
       - XMA-10dB
-      - LPF-KL
 ```
 
 ## Flat Format
