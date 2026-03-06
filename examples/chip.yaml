@@ -1,3 +1,4 @@
 # Chip information
 name: sample-8q
 num_qubits: 8
+qubits_per_readout_line: 4

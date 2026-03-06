@@ -13,6 +13,12 @@
       "type": "integer",
       "minimum": 1,
       "description": "Number of qubits on the chip"
+    },
+    "qubits_per_readout_line": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 4,
+      "description": "Number of qubits multiplexed per readout line"
     }
   },
   "additionalProperties": false
