@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cooldown Bundle",
+  "description": "Single-file, fully-resolved representation of a cooldown. All module references are expanded and component keys are resolved to concrete objects.",
+  "type": "object",
+  "required": ["metadata", "control", "readout_send", "readout_return"],
+  "properties": {
+    "metadata": {
+      "$ref": "metadata.schema.json"
+    },
+    "chip": {
+      "oneOf": [
+        { "$ref": "chip.schema.json" },
+        { "type": "null" }
+      ],
+      "description": "Chip information (null if not available)"
+    },
+    "control": {
+      "$ref": "#/$defs/resolved_wiring",
+      "description": "Control lines (fully resolved)"
+    },
+    "readout_send": {
+      "$ref": "#/$defs/resolved_wiring",
+      "description": "Readout send lines (fully resolved)"
+    },
+    "readout_return": {
+      "$ref": "#/$defs/resolved_wiring",
+      "description": "Readout return lines (fully resolved)"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary",
+      "description": "Pre-computed wiring summary"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "resolved_wiring": {
+      "type": "object",
+      "required": ["lines"],
+      "properties": {
+        "lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/resolved_line"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "resolved_line": {
+      "type": "object",
+      "required": ["line_id", "stages"],
+      "properties": {
+        "line_id": {
+          "type": "string",
+          "pattern": "^(C|RS|RR)\\d+$"
+        },
+        "qubit": {
+          "type": "string",
+          "pattern": "^Q\\d+$",
+          "description": "Associated qubit (control lines)"
+        },
+        "qubits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^Q\\d+$"
+          },
+          "description": "Associated qubits (readout lines)"
+        },
+        "stages": {
+          "$ref": "#/$defs/resolved_stages"
+        }
+      },
+      "additionalProperties": false
+    },
+    "resolved_stages": {
+      "type": "object",
+      "description": "Resolved component list per stage (no module refs, no add/remove)",
+      "propertyNames": {
+        "$ref": "#/$defs/stage"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/resolved_component"
+        }
+      }
+    },
+    "resolved_component": {
+      "type": "object",
+      "required": ["type", "manufacturer", "model"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["attenuator", "filter", "isolator", "amplifier", "custom"]
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "serial": {
+          "type": "string",
+          "default": ""
+        },
+        "summary_label": {
+          "type": "string",
+          "description": "Human-readable label for display (e.g. '10dB Atten.')"
+        },
+        "value_dB": {
+          "type": "number"
+        },
+        "gain_dB": {
+          "type": "number"
+        },
+        "filter_type": {
+          "type": "string"
+        },
+        "amplifier_type": {
+          "type": "string"
+        },
+        "custom_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["sections"],
+      "properties": {
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/summary_section"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary_section": {
+      "type": "object",
+      "required": ["label", "lines"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Section label (e.g. 'Control', 'Readout Send', 'Readout Return')"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/summary_line"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary_line": {
+      "type": "object",
+      "required": ["line_id", "qubits", "total_atten", "total_gain", "stage_components"],
+      "properties": {
+        "line_id": {
+          "type": "string"
+        },
+        "qubits": {
+          "type": "string",
+          "description": "Qubit(s) as display string (e.g. 'Q00' or 'Q00, Q01, Q02, Q03')"
+        },
+        "total_atten": {
+          "type": "number",
+          "description": "Total attenuation in dB"
+        },
+        "total_gain": {
+          "type": "number",
+          "description": "Total gain in dB"
+        },
+        "stage_components": {
+          "type": "object",
+          "description": "Summary labels per stage",
+          "propertyNames": {
+            "$ref": "#/$defs/stage"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["RT", "50K", "4K", "Still", "CP", "MXC"]
+    }
+  }
+}
