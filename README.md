@@ -1,14 +1,34 @@
 # cryo-wiring-spec
 
-Specification for dilution refrigerator wiring configuration data.
+Specification for dilution refrigerator wiring configuration data in YAML format.
 
-## Overview
+**[Read the full specification](https://cryo-wiring.github.io/spec/)**
 
-This repository defines the YAML data format specification used across the cryo-wiring ecosystem.
+## Related Repositories
 
-- [cryo-wiring-cli](https://github.com/cryo-wiring/cli) — Core library + CLI (reference implementation of this spec)
-- [cryo-wiring-app](https://github.com/cryo-wiring/app) — Web UI
-- [cryo-wiring-template](https://github.com/cryo-wiring/template) — Data repository template
+| Repository | Description |
+|------------|-------------|
+| [cryo-wiring-cli](https://github.com/cryo-wiring/cli) | Core library + CLI (reference implementation of this spec) |
+| [cryo-wiring-app](https://github.com/cryo-wiring/app) | Web UI |
+| [cryo-wiring-template](https://github.com/cryo-wiring/template) | Data repository template |
+
+## Spec Overview
+
+This spec defines a YAML data format for describing RF/microwave wiring configurations inside dilution refrigerators.
+
+- **6 temperature stages** — Component placement from RT (300K) down to MXC (10mK)
+- **4 component types** — Attenuator, filter, isolator, amplifier
+- **3 line types** — Control, Readout Send, Readout Return
+- **Module / flat format** — Supports both reusable module definitions and inline definitions
+
+See the [documentation site](https://cryo-wiring.github.io/spec/) for details.
+
+## Schema
+
+| File | Description |
+|------|-------------|
+| [`wiring.schema.json`](schema/wiring.schema.json) | Wiring configuration (control / readout_send / readout_return) |
+| [`metadata.schema.json`](schema/metadata.schema.json) | Cooldown metadata |
 
 ## Examples
 
@@ -22,115 +42,9 @@ See the [`examples/`](examples/) directory for complete sample files:
 | [`readout_send.yaml`](examples/readout_send.yaml) | Readout send wiring (module format) |
 | [`readout_return.yaml`](examples/readout_return.yaml) | Readout return wiring (flat format) |
 
-## Schema
+## Building Docs Locally
 
-| File | Description |
-|------|-------------|
-| `schema/wiring.schema.json` | Wiring configuration (control.yaml, readout_send.yaml, readout_return.yaml) |
-| `schema/metadata.schema.json` | Cooldown metadata (metadata.yaml) |
-
-## Directory Structure
-
-Data repositories follow this structure:
-
-```text
-my-fridge-data/
-├── components.yaml              # Component catalog
-├── templates/
-│   ├── control_module.yaml      # Control line module template
-│   ├── readout_send_module.yaml # Readout send line module template
-│   └── readout_return_module.yaml # Readout return line module template
-├── <fridge-name>/
-│   ├── chip.yaml                # Chip information
-│   ├── current/                 # Working cooldown
-│   │   ├── metadata.yaml
-│   │   ├── control.yaml
-│   │   ├── readout_send.yaml
-│   │   └── readout_return.yaml
-│   └── <YYYY-NNN>/             # Snapshot
-│       ├── metadata.yaml
-│       ├── control.yaml
-│       ├── readout_send.yaml
-│       └── readout_return.yaml
-```
-
-## Temperature Stages
-
-Wiring is organized across 6 temperature stages:
-
-| Stage | Temperature |
-|-------|-------------|
-| `RT` | Room temperature |
-| `50K` | 50 Kelvin |
-| `4K` | 4 Kelvin |
-| `Still` | Still |
-| `CP` | Cold plate |
-| `MXC` | Mixing chamber |
-
-## Component Types
-
-| Type | Description | Specific Fields |
-|------|-------------|-----------------|
-| `attenuator` | Attenuator | `value_dB` (attenuation) |
-| `filter` | Filter | `filter_type` (e.g., Lowpass, Eccosorb) |
-| `isolator` | Isolator | — |
-| `amplifier` | Amplifier | `amplifier_type` (e.g., HEMT, RT), `gain_dB` (gain) |
-
-Common fields for all components: `type`, `model`, `serial` (optional)
-
-## Line Configuration
-
-### Line Types
-
-| Type | Prefix | Identifier | Description |
-|------|--------|------------|-------------|
-| Control | `C` | `qubit` (single) | Input line for qubit control signals |
-| Readout Send | `RS` | `qubits` (multiple) | Input line for readout signals (4-multiplexed) |
-| Readout Return | `RR` | `qubits` (multiple) | Output line for readout signals (4-multiplexed) |
-
-### Module Format
-
-Lines can reference modules. Per-stage overrides are supported via `add` / `remove`.
-
-```yaml
-modules:
-  control_standard:
-    stages:
-      50K:
-      - XMA-10dB
-      4K:
-      - XMA-20dB
-      MXC:
-      - XMA-20dB
-
-lines:
-- line_id: C00
-  qubit: Q00
-  module: control_standard
-- line_id: C01
-  qubit: Q01
-  module: control_standard
-  stages:
-    4K:
-      add:
-      - LPF-KL
-```
-
-### Flat Format
-
-Components can also be specified directly on each line without using modules.
-
-```yaml
-lines:
-- line_id: C00
-  qubit: Q00
-  stages:
-    50K:
-    - type: attenuator
-      model: XMA-2082-6431-10
-      value_dB: 10
-    4K:
-    - type: attenuator
-      model: XMA-2082-6431-20
-      value_dB: 20
+```bash
+uv sync --group docs
+uv run zensical build
 ```
