@@ -68,7 +68,8 @@ The line defines all components directly. `module` must not be present.
   stages:
     4K:
       - type: attenuator
-        model: XMA-2082-6431-20
+        manufacturer: XMA
+        model: 2082-6431-20
         value_dB: 20
 ```
 
@@ -113,6 +114,7 @@ A full component definition.
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `type` | enum | **Yes** | `attenuator`, `filter`, `isolator`, or `amplifier` |
+| `manufacturer` | string | **Yes** | Manufacturer name |
 | `model` | string | **Yes** | Model number |
 | `serial` | string | No | Serial number |
 | `value_dB` | number | No | Attenuation in dB (attenuator) |
@@ -122,7 +124,8 @@ A full component definition.
 
 ```yaml
 - type: amplifier
-  model: LNF-LNC4_8C
+  manufacturer: LNF
+  model: LNC4_8C
   amplifier_type: HEMT
   gain_dB: 38
 ```
