@@ -1,4 +1,4 @@
-# cryo-wiring-spec
+# Cryo Wiring Specification
 
 Specification for dilution refrigerator wiring configuration data in YAML format.
 
@@ -13,13 +13,13 @@ It standardizes wiring configuration management so that the [cryo-wiring/cli](ht
 
 Step-by-step explanation of each element of the spec.
 
-| Section | Description |
-|---------|-------------|
-| [Directory Structure](guide/directory-structure.md) | File layout and roles in a data repository |
-| [Temperature Stages](guide/temperature-stages.md) | The 6 temperature stages from RT to MXC and signal direction |
-| [Component Types](guide/component-types.md) | Attenuator, filter, isolator, and amplifier definitions |
-| [Line Configuration](guide/line-configuration.md) | Control / Readout Send / Readout Return lines and module format |
-| [Examples](guide/examples.md) | Complete YAML sample files |
+| Section                                             | Description                                                     |
+| --------------------------------------------------- | --------------------------------------------------------------- |
+| [Directory Structure](guide/directory-structure.md) | File layout and roles in a data repository                      |
+| [Temperature Stages](guide/temperature-stages.md)   | The 6 temperature stages from RT to MXC and signal direction    |
+| [Component Types](guide/component-types.md)         | Attenuator, filter, isolator, and amplifier definitions         |
+| [Line Configuration](guide/line-configuration.md)   | Control / Readout Send / Readout Return lines and module format |
+| [Examples](guide/examples.md)                       | Complete YAML sample files                                      |
 
 ### Schema Reference
 
@@ -28,7 +28,9 @@ Exhaustive field-level definitions for each YAML file.
 | Section | Target Files |
 |---------|-------------|
 | [Wiring Schema](reference/wiring-schema.md) | `control.yaml` / `readout_send.yaml` / `readout_return.yaml` |
+| [Components Schema](reference/components-schema.md) | `components.yaml` |
 | [Metadata Schema](reference/metadata-schema.md) | `metadata.yaml` |
+| [Chip Schema](reference/chip-schema.md) | `chip.yaml` |
 
 ## Quick Start
 

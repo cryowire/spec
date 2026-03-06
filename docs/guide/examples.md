@@ -7,6 +7,7 @@ Complete sample files are available in the [`examples/`](https://github.com/cryo
 | File | Description |
 |------|-------------|
 | `components.yaml` | Component catalog |
+| `chip.yaml` | Chip information |
 | `metadata.yaml` | Cooldown metadata |
 | `control.yaml` | Control wiring (module format) |
 | `readout_send.yaml` | Readout send wiring (module format) |
@@ -16,6 +17,12 @@ Complete sample files are available in the [`examples/`](https://github.com/cryo
 
 ```yaml
 --8<-- "examples/components.yaml"
+```
+
+## Chip Information
+
+```yaml
+--8<-- "examples/chip.yaml"
 ```
 
 ## Cooldown Metadata

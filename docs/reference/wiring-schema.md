@@ -35,7 +35,10 @@ modules:
 
 ## Line
 
-Each item in `lines` must specify either `module` or `stages` (not both without the other).
+Each item in `lines` uses one of two formats:
+
+- **Module reference** — Specifies `module` and optionally `stages` for overrides (`add`/`remove`)
+- **Flat (inline)** — Specifies `stages` directly with component lists. `module` must not be present.
 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|

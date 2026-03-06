@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Chip Metadata",
+  "description": "Schema for defining chip information",
+  "type": "object",
+  "required": ["name", "num_qubits"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Chip name"
+    },
+    "num_qubits": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of qubits on the chip"
+    }
+  },
+  "additionalProperties": false
+}

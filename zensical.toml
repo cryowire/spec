@@ -13,6 +13,8 @@ nav = [
   ]},
   {"Schema Reference" = [
     "reference/wiring-schema.md",
+    "reference/components-schema.md",
     "reference/metadata-schema.md",
+    "reference/chip-schema.md",
   ]},
 ]

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Component Catalog",
+  "description": "Schema for defining reusable component references",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/$defs/component"
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "required": ["type", "model"],
+      "oneOf": [
+        {
+          "properties": {
+            "type": { "const": "attenuator" },
+            "model": { "type": "string" },
+            "serial": { "type": "string" },
+            "value_dB": { "type": "number", "description": "Attenuation value in dB" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "type": { "const": "filter" },
+            "model": { "type": "string" },
+            "serial": { "type": "string" },
+            "filter_type": { "type": "string", "description": "Filter type (e.g., Lowpass, Eccosorb)" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "type": { "const": "isolator" },
+            "model": { "type": "string" },
+            "serial": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "type": { "const": "amplifier" },
+            "model": { "type": "string" },
+            "serial": { "type": "string" },
+            "amplifier_type": { "type": "string", "description": "Amplifier type (e.g., HEMT, RT)" },
+            "gain_dB": { "type": "number", "description": "Gain in dB" }
+          },
+          "additionalProperties": false
+        }
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["attenuator", "filter", "isolator", "amplifier"],
+          "description": "Component type"
+        },
+        "model": {
+          "type": "string",
+          "description": "Model number"
+        },
+        "serial": {
+          "type": "string",
+          "description": "Serial number"
+        }
+      }
+    }
+  }
+}

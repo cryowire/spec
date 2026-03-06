@@ -28,7 +28,9 @@ See the [documentation site](https://cryo-wiring.github.io/spec/) for details.
 | File | Description |
 |------|-------------|
 | [`wiring.schema.json`](schema/wiring.schema.json) | Wiring configuration (control / readout_send / readout_return) |
+| [`components.schema.json`](schema/components.schema.json) | Component catalog |
 | [`metadata.schema.json`](schema/metadata.schema.json) | Cooldown metadata |
+| [`chip.schema.json`](schema/chip.schema.json) | Chip information |
 
 ## Examples
 
@@ -37,6 +39,7 @@ See the [`examples/`](examples/) directory for complete sample files:
 | File | Description |
 |------|-------------|
 | [`components.yaml`](examples/components.yaml) | Component catalog |
+| [`chip.yaml`](examples/chip.yaml) | Chip information |
 | [`metadata.yaml`](examples/metadata.yaml) | Cooldown metadata |
 | [`control.yaml`](examples/control.yaml) | Control wiring (module format) |
 | [`readout_send.yaml`](examples/readout_send.yaml) | Readout send wiring (module format) |

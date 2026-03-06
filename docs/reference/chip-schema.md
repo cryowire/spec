@@ -1,0 +1,20 @@
+# Chip Schema
+
+Schema for `chip.yaml`.
+
+Source: [`schema/chip.schema.json`](https://github.com/cryo-wiring/spec/blob/main/schema/chip.schema.json)
+
+## Structure
+
+Additional properties are **not allowed**.
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `name` | string | **Yes** | Chip name |
+| `num_qubits` | integer | **Yes** | Number of qubits on the chip (minimum: 1) |
+
+## Example
+
+```yaml
+--8<-- "examples/chip.yaml"
+```

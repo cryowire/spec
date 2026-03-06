@@ -10,7 +10,7 @@ Additional properties are **not allowed**.
 
 | Property | Type | Required | Pattern | Description |
 |----------|------|----------|---------|-------------|
-| `cooldown_id` | string | **Yes** | `^cd\d{3}$` | Cooldown identifier (e.g., `cd001`) |
+| `cooldown_id` | string | **Yes** | `^cd\d{3,}$` | Cooldown identifier (e.g., `cd001`) |
 | `date` | string | **Yes** | ISO 8601 date | Cooldown date (`YYYY-MM-DD`) |
 | `fridge` | string | **Yes** | — | Fridge name |
 | `operator` | string | No | — | Operator name |
@@ -27,3 +27,7 @@ operator: Alice
 purpose: Qubit characterization run
 notes: Replaced attenuator on C03 at 4K stage.
 ```
+
+## Cooldown ID
+
+The `cooldown_id` uses the format `cdNNN` where `NNN` is a zero-padded number of 3 or more digits (e.g., `cd001`, `cd999`, `cd1000`).

@@ -7,7 +7,7 @@
   "properties": {
     "cooldown_id": {
       "type": "string",
-      "pattern": "^cd\\d{3}$",
+      "pattern": "^cd\\d{3,}$",
       "description": "Cooldown identifier (e.g., cd001)"
     },
     "date": {
