@@ -12,6 +12,7 @@ Additional properties are **not allowed**.
 |----------|------|----------|-------------|
 | `name` | string | **Yes** | Chip name |
 | `num_qubits` | integer | **Yes** | Number of qubits on the chip (minimum: 1) |
+| `qubits_per_readout_line` | integer | No | Number of qubits multiplexed per readout line (minimum: 1, default: 4) |
 
 ## Example
 

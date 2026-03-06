@@ -126,7 +126,7 @@
         "line_id": {
           "type": "string",
           "pattern": "^(C|RS|RR)\\d+$",
-          "description": "Line identifier (C00-C63, RS00-RS15, or RR00-RR15)"
+          "description": "Line identifier (e.g., C00, RS00, RR00)"
         },
         "qubit": {
           "type": "string",

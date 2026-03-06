@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Cooldown Bundle",
+  "title": "Cooldown",
   "description": "Single-file, fully-resolved representation of a cooldown. All module references are expanded and component keys are resolved to concrete objects.",
   "type": "object",
   "required": ["metadata", "control", "readout_send", "readout_return"],
@@ -93,7 +93,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["attenuator", "filter", "isolator", "amplifier", "custom"]
+          "enum": ["attenuator", "filter", "isolator", "amplifier"]
         },
         "manufacturer": {
           "type": "string"
@@ -121,9 +121,6 @@
         "amplifier_type": {
           "type": "string"
         },
-        "custom_type": {
-          "type": "string"
-        }
       },
       "additionalProperties": false
     },
