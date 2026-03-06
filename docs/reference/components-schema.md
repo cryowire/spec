@@ -12,13 +12,14 @@ Additional properties on each component are **not allowed**.
 
 ## Component Definition
 
-Each component must specify `type` and `model`. Additional fields depend on the component type.
+Each component must specify `type`, `manufacturer`, and `model`. Additional fields depend on the component type.
 
 ### Attenuator
 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `type` | `"attenuator"` | **Yes** | Component type |
+| `manufacturer` | string | **Yes** | Manufacturer name |
 | `model` | string | **Yes** | Model number |
 | `serial` | string | No | Serial number |
 | `value_dB` | number | No | Attenuation in dB |
@@ -28,6 +29,7 @@ Each component must specify `type` and `model`. Additional fields depend on the 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `type` | `"filter"` | **Yes** | Component type |
+| `manufacturer` | string | **Yes** | Manufacturer name |
 | `model` | string | **Yes** | Model number |
 | `serial` | string | No | Serial number |
 | `filter_type` | string | No | Filter type (e.g., `Lowpass`, `Eccosorb`) |
@@ -37,6 +39,7 @@ Each component must specify `type` and `model`. Additional fields depend on the 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `type` | `"isolator"` | **Yes** | Component type |
+| `manufacturer` | string | **Yes** | Manufacturer name |
 | `model` | string | **Yes** | Model number |
 | `serial` | string | No | Serial number |
 
@@ -45,6 +48,7 @@ Each component must specify `type` and `model`. Additional fields depend on the 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
 | `type` | `"amplifier"` | **Yes** | Component type |
+| `manufacturer` | string | **Yes** | Manufacturer name |
 | `model` | string | **Yes** | Model number |
 | `serial` | string | No | Serial number |
 | `amplifier_type` | string | No | Amplifier type (e.g., `HEMT`, `RT`) |

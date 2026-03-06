@@ -9,11 +9,12 @@
   "$defs": {
     "component": {
       "type": "object",
-      "required": ["type", "model"],
+      "required": ["type", "manufacturer", "model"],
       "oneOf": [
         {
           "properties": {
             "type": { "const": "attenuator" },
+            "manufacturer": { "type": "string" },
             "model": { "type": "string" },
             "serial": { "type": "string" },
             "value_dB": { "type": "number", "description": "Attenuation value in dB" }
@@ -23,6 +24,7 @@
         {
           "properties": {
             "type": { "const": "filter" },
+            "manufacturer": { "type": "string" },
             "model": { "type": "string" },
             "serial": { "type": "string" },
             "filter_type": { "type": "string", "description": "Filter type (e.g., Lowpass, Eccosorb)" }
@@ -32,6 +34,7 @@
         {
           "properties": {
             "type": { "const": "isolator" },
+            "manufacturer": { "type": "string" },
             "model": { "type": "string" },
             "serial": { "type": "string" }
           },
@@ -40,6 +43,7 @@
         {
           "properties": {
             "type": { "const": "amplifier" },
+            "manufacturer": { "type": "string" },
             "model": { "type": "string" },
             "serial": { "type": "string" },
             "amplifier_type": { "type": "string", "description": "Amplifier type (e.g., HEMT, RT)" },
@@ -53,6 +57,10 @@
           "type": "string",
           "enum": ["attenuator", "filter", "isolator", "amplifier"],
           "description": "Component type"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Manufacturer name"
         },
         "model": {
           "type": "string",
