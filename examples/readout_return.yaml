@@ -14,6 +14,7 @@ modules:
 lines:
   - line_id: RR00
     qubits: [Q00, Q01, Q02, Q03]
+    representative: true
     module: rr
     stages:
       CP:

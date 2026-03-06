@@ -11,6 +11,7 @@ modules:
 lines:
   - line_id: RS00
     qubits: [Q00, Q01, Q02, Q03]
+    representative: true
     module: rs
 
   - line_id: RS01

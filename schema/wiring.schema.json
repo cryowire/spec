@@ -148,6 +148,11 @@
         "module": {
           "type": "string",
           "description": "Referenced module name"
+        },
+        "representative": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether this line is a representative example for wiring diagrams"
         }
       },
       "oneOf": [
