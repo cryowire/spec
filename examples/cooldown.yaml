@@ -1,0 +1,570 @@
+metadata:
+  cooldown_id: cd001
+  date: '2026-03-06'
+  fridge: your-cryo
+  operator: ''
+  purpose: ''
+  notes: ''
+chip:
+  name: sample-8q
+  num_qubits: 8
+  qubits_per_readout_line: 4
+control:
+  lines:
+  - line_id: C00
+    qubit: Q00
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      Still:
+      - manufacturer: K&L
+        model: 5VLF
+        serial: ''
+        type: filter
+        filter_type: Lowpass
+        summary_label: Lowpass
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      - manufacturer: XMA
+        model: EF-03
+        serial: ''
+        type: filter
+        filter_type: Eccosorb
+        summary_label: Eccosorb
+  - line_id: C01
+    qubit: Q01
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      Still: []
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      - manufacturer: XMA
+        model: EF-03
+        serial: ''
+        type: filter
+        filter_type: Eccosorb
+        summary_label: Eccosorb
+  - line_id: C02
+    qubit: Q02
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      Still: []
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      - manufacturer: XMA
+        model: EF-03
+        serial: ''
+        type: filter
+        filter_type: Eccosorb
+        summary_label: Eccosorb
+  - line_id: C03
+    qubit: Q03
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      Still: []
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+  - line_id: C04
+    qubit: Q04
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      Still: []
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      - manufacturer: XMA
+        model: EF-03
+        serial: ''
+        type: filter
+        filter_type: Eccosorb
+        summary_label: Eccosorb
+  - line_id: C05
+    qubit: Q05
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      Still: []
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+  - line_id: C06
+    qubit: Q06
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      Still: []
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      - manufacturer: XMA
+        model: EF-03
+        serial: ''
+        type: filter
+        filter_type: Eccosorb
+        summary_label: Eccosorb
+  - line_id: C07
+    qubit: Q07
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      Still: []
+      CP: []
+      MXC:
+      - manufacturer: XMA
+        model: 2082-6431-20
+        serial: ''
+        type: attenuator
+        value_dB: 20.0
+        summary_label: ATT 20dB
+      - manufacturer: XMA
+        model: EF-03
+        serial: ''
+        type: filter
+        filter_type: Eccosorb
+        summary_label: Eccosorb
+readout_send:
+  lines:
+  - line_id: RS00
+    qubits:
+    - Q00
+    - Q01
+    - Q02
+    - Q03
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      Still: []
+      CP: []
+      MXC: []
+  - line_id: RS01
+    qubits:
+    - Q04
+    - Q05
+    - Q06
+    - Q07
+    stages:
+      RT: []
+      50K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      4K:
+      - manufacturer: XMA
+        model: 2082-6431-10
+        serial: ''
+        type: attenuator
+        value_dB: 10.0
+        summary_label: ATT 10dB
+      Still: []
+      CP: []
+      MXC: []
+readout_return:
+  lines:
+  - line_id: RR00
+    qubits:
+    - Q00
+    - Q01
+    - Q02
+    - Q03
+    stages:
+      RT:
+      - manufacturer: MITEQ
+        model: AFS3
+        serial: ''
+        type: amplifier
+        amplifier_type: RT
+        gain_dB: 20.0
+        summary_label: RT +20dB
+      50K:
+      - manufacturer: LNF
+        model: LNC03_14A
+        serial: ''
+        type: amplifier
+        amplifier_type: HEMT
+        gain_dB: 40.0
+        summary_label: HEMT +40dB
+      4K: []
+      Still: []
+      CP: []
+      MXC: []
+  - line_id: RR01
+    qubits:
+    - Q04
+    - Q05
+    - Q06
+    - Q07
+    stages:
+      RT:
+      - manufacturer: MITEQ
+        model: AFS3
+        serial: ''
+        type: amplifier
+        amplifier_type: RT
+        gain_dB: 20.0
+        summary_label: RT +20dB
+      50K:
+      - manufacturer: LNF
+        model: LNC03_14A
+        serial: ''
+        type: amplifier
+        amplifier_type: HEMT
+        gain_dB: 40.0
+        summary_label: HEMT +40dB
+      4K: []
+      Still: []
+      CP:
+      - manufacturer: LNF
+        model: ISC4_12A
+        serial: ''
+        type: isolator
+        summary_label: ISO
+      - manufacturer: LNF
+        model: ISC4_12A
+        serial: ''
+        type: isolator
+        summary_label: ISO
+      MXC: []
+summary:
+  sections:
+  - label: Control
+    lines:
+    - line_id: C00
+      qubits: Q00
+      total_atten: 50.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 20dB
+        Still:
+        - Lowpass
+        CP: []
+        MXC:
+        - ATT 20dB
+        - Eccosorb
+    - line_id: C01
+      qubits: Q01
+      total_atten: 50.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 20dB
+        Still: []
+        CP: []
+        MXC:
+        - ATT 20dB
+        - Eccosorb
+    - line_id: C02
+      qubits: Q02
+      total_atten: 50.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 20dB
+        Still: []
+        CP: []
+        MXC:
+        - ATT 20dB
+        - Eccosorb
+    - line_id: C03
+      qubits: Q03
+      total_atten: 40.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 10dB
+        Still: []
+        CP: []
+        MXC:
+        - ATT 20dB
+    - line_id: C04
+      qubits: Q04
+      total_atten: 50.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 20dB
+        Still: []
+        CP: []
+        MXC:
+        - ATT 20dB
+        - Eccosorb
+    - line_id: C05
+      qubits: Q05
+      total_atten: 40.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 10dB
+        Still: []
+        CP: []
+        MXC:
+        - ATT 20dB
+    - line_id: C06
+      qubits: Q06
+      total_atten: 50.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 20dB
+        Still: []
+        CP: []
+        MXC:
+        - ATT 20dB
+        - Eccosorb
+    - line_id: C07
+      qubits: Q07
+      total_atten: 50.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 20dB
+        Still: []
+        CP: []
+        MXC:
+        - ATT 20dB
+        - Eccosorb
+  - label: Readout Send
+    lines:
+    - line_id: RS00
+      qubits: Q00, Q01, Q02, Q03
+      total_atten: 20.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 10dB
+        Still: []
+        CP: []
+        MXC: []
+    - line_id: RS01
+      qubits: Q04, Q05, Q06, Q07
+      total_atten: 20.0
+      total_gain: 0.0
+      stage_components:
+        RT: []
+        50K:
+        - ATT 10dB
+        4K:
+        - ATT 10dB
+        Still: []
+        CP: []
+        MXC: []
+  - label: Readout Return
+    lines:
+    - line_id: RR00
+      qubits: Q00, Q01, Q02, Q03
+      total_atten: 0.0
+      total_gain: 60.0
+      stage_components:
+        RT:
+        - RT +20dB
+        50K:
+        - HEMT +40dB
+        4K: []
+        Still: []
+        CP: []
+        MXC: []
+    - line_id: RR01
+      qubits: Q04, Q05, Q06, Q07
+      total_atten: 0.0
+      total_gain: 60.0
+      stage_components:
+        RT:
+        - RT +20dB
+        50K:
+        - HEMT +40dB
+        4K: []
+        Still: []
+        CP:
+        - ISO
+        - ISO
+        MXC: []
