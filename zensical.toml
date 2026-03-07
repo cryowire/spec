@@ -18,3 +18,28 @@ nav = [
     "reference/chip-schema.md",
   ]},
 ]
+extra_css = ["stylesheets/extra.css"]
+
+[project.theme]
+favicon = "assets/logo.png"
+
+[project.theme.icon]
+logo = "assets/logo.png"
+
+[project.theme.font]
+text = "Inter"
+code = "JetBrains Mono"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "light-blue"
+accent = "indigo"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+scheme = "default"
+primary = "light-blue"
+accent = "indigo"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to dark mode"
