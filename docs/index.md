@@ -1,4 +1,4 @@
-# Cryo Wiring Specification
+# Cryowire Specification
 
 Specification for dilution refrigerator wiring configuration data in YAML format.
 
