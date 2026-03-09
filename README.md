@@ -1,14 +1,13 @@
-<a href="https://github.com/cryowire">
-  <img src="https://raw.githubusercontent.com/cryowire/artwork/main/logo-type/logotype.png" alt="cryowire" width="400" />
-</a>
+<p align="center"><a href="https://github.com/cryowire">
+  <img src="https://raw.githubusercontent.com/cryowire/artwork/main/logo-type/logotype.png" alt="cryowire" width="600" />
+</a></p>
 
-# cryowire/spec
-
-Specification for dilution refrigerator wiring configuration data in YAML format.
-
-**[Read the full specification](https://cryowire.github.io/spec/)**
-
-See **[cryowire.github.io](https://cryowire.github.io/)** for the full project overview.
+<h1 align="center">cryowire/spec</h1>
+<p align="center">Specification for dilution refrigerator wiring configuration data in YAML format.</p>
+<p align="center">
+  <a href="https://cryowire.github.io/"><img src="https://img.shields.io/badge/Website-cryowire.github.io-38bdf8?style=for-the-badge" alt="Website" /></a>
+  <a href="https://cryowire.github.io/spec/"><img src="https://img.shields.io/badge/Docs-Specification-818cf8?style=for-the-badge" alt="Specification" /></a>
+</p>
 
 ## Spec Overview
 
