@@ -1,6 +1,6 @@
 # Examples
 
-Complete sample files are available in the [`examples/`](https://github.com/cryo-wiring/spec/tree/main/examples) directory.
+Complete sample files are available in the [`examples/`](https://github.com/cryowire/spec/tree/main/examples) directory.
 
 ## Files
 

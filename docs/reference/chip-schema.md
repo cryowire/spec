@@ -2,7 +2,7 @@
 
 Schema for `chip.yaml`.
 
-Source: [`schema/chip.schema.json`](https://github.com/cryo-wiring/spec/blob/main/schema/chip.schema.json)
+Source: [`schema/chip.schema.json`](https://github.com/cryowire/spec/blob/main/schema/chip.schema.json)
 
 ## Structure
 

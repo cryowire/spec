@@ -24,7 +24,7 @@ wheels = [
 ]
 
 [[package]]
-name = "cryo-wiring-spec"
+name = "cryowire-spec"
 version = "0.1.0"
 source = { virtual = "." }
 

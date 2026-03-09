@@ -2,15 +2,15 @@
 
 Specification for dilution refrigerator wiring configuration data in YAML format.
 
-**[Read the full specification](https://cryo-wiring.github.io/spec/)**
+**[Read the full specification](https://cryowire.github.io/spec/)**
 
 ## Related Repositories
 
 | Repository                                                      | Description                                                |
 | --------------------------------------------------------------- | ---------------------------------------------------------- |
-| [cryo-wiring/cli](https://github.com/cryo-wiring/cli)           | Core library + CLI (reference implementation of this spec) |
-| [cryo-wiring/app](https://github.com/cryo-wiring/app)           | Web UI                                                     |
-| [cryo-wiring/template](https://github.com/cryo-wiring/template) | Data repository template                                   |
+| [cryowire/cli](https://github.com/cryowire/cli)           | Core library + CLI (reference implementation of this spec) |
+| [cryowire/app](https://github.com/cryowire/app)           | Web UI                                                     |
+| [cryowire/template](https://github.com/cryowire/template) | Data repository template                                   |
 
 ## Spec Overview
 
@@ -21,7 +21,7 @@ This spec defines a YAML data format for describing RF/microwave wiring configur
 - **3 line types** — Control, Readout Send, Readout Return
 - **Module / flat format** — Supports both reusable module definitions and inline definitions
 
-See the [documentation site](https://cryo-wiring.github.io/spec/) for details.
+See the [documentation site](https://cryowire.github.io/spec/) for details.
 
 ## Schema
 

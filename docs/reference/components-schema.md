@@ -2,7 +2,7 @@
 
 Schema for `components.yaml`.
 
-Source: [`schema/components.schema.json`](https://github.com/cryo-wiring/spec/blob/main/schema/components.schema.json)
+Source: [`schema/components.schema.json`](https://github.com/cryowire/spec/blob/main/schema/components.schema.json)
 
 ## Structure
 

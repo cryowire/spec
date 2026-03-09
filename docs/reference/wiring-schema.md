@@ -2,7 +2,7 @@
 
 Schema for `control.yaml`, `readout_send.yaml`, and `readout_return.yaml`.
 
-Source: [`schema/wiring.schema.json`](https://github.com/cryo-wiring/spec/blob/main/schema/wiring.schema.json)
+Source: [`schema/wiring.schema.json`](https://github.com/cryowire/spec/blob/main/schema/wiring.schema.json)
 
 ## Top-Level Structure
 

@@ -2,7 +2,7 @@
 
 Schema for `metadata.yaml`.
 
-Source: [`schema/metadata.schema.json`](https://github.com/cryo-wiring/spec/blob/main/schema/metadata.schema.json)
+Source: [`schema/metadata.schema.json`](https://github.com/cryowire/spec/blob/main/schema/metadata.schema.json)
 
 ## Structure
 

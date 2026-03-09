@@ -1,7 +1,7 @@
 [project]
-site_name = "cryo-wiring-spec"
+site_name = "cryowire-spec"
 site_description = "Specification for dilution refrigerator wiring configuration data"
-site_url = "https://cryo-wiring.github.io/spec/"
+site_url = "https://cryowire.github.io/spec/"
 nav = [
   {"Home" = "index.md"},
   {"Guide" = [

@@ -1,5 +1,5 @@
 [project]
-name = "cryo-wiring-spec"
+name = "cryowire-spec"
 version = "0.1.0"
 description = "Specification for dilution refrigerator wiring configuration data"
 requires-python = ">=3.11"
