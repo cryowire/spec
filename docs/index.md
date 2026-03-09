@@ -44,14 +44,16 @@ my-cryo-data/
 │   ├── readout_send_module.yaml
 │   └── readout_return_module.yaml
 ├── <cryo-name>/
-│   ├── chip.yaml                # Chip information
-│   ├── current/                 # Working cooldown
-│   │   ├── metadata.yaml
-│   │   ├── control.yaml
-│   │   ├── readout_send.yaml
-│   │   └── readout_return.yaml
-│   └── <YYYY-NNN>/             # Snapshot
-│       └── ...
+│   └── <YYYY>/                  # Year group
+│       ├── cd001/               # Cooldown directory
+│       │   ├── metadata.yaml
+│       │   ├── chip.yaml
+│       │   ├── control.yaml
+│       │   ├── readout_send.yaml
+│       │   ├── readout_return.yaml
+│       │   └── cooldown.yaml    # Resolved bundle
+│       └── cd002/
+│           └── ...
 ```
 
 Use [cryo-wiring/template](https://github.com/cryo-wiring/template) to get started quickly.
