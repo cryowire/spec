@@ -58,8 +58,4 @@ my-cryo-data/
 
 Use [cryowire/template](https://github.com/cryowire/template) to get started quickly.
 
-## Related Repositories
-
-- [cryowire/cli](https://github.com/cryowire/cli) — Core library + CLI (reference implementation of this spec)
-- [cryowire/app](https://github.com/cryowire/app) — Web UI
-- [cryowire/template](https://github.com/cryowire/template) — Data repository template
+See **[cryowire.github.io](https://cryowire.github.io/)** for the full project overview.

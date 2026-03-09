@@ -1,16 +1,14 @@
-# Cryo Wiring Specification
+<a href="https://github.com/cryowire">
+  <img src="https://raw.githubusercontent.com/cryowire/artwork/main/logo-type/logotype.png" alt="cryowire" width="400" />
+</a>
+
+# cryowire/spec
 
 Specification for dilution refrigerator wiring configuration data in YAML format.
 
 **[Read the full specification](https://cryowire.github.io/spec/)**
 
-## Related Repositories
-
-| Repository                                                      | Description                                                |
-| --------------------------------------------------------------- | ---------------------------------------------------------- |
-| [cryowire/cli](https://github.com/cryowire/cli)           | Core library + CLI (reference implementation of this spec) |
-| [cryowire/app](https://github.com/cryowire/app)           | Web UI                                                     |
-| [cryowire/template](https://github.com/cryowire/template) | Data repository template                                   |
+See **[cryowire.github.io](https://cryowire.github.io/)** for the full project overview.
 
 ## Spec Overview
 
