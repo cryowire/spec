@@ -12,7 +12,7 @@ Additional properties are **not allowed**.
 |----------|------|----------|---------|-------------|
 | `cooldown_id` | string | **Yes** | `^cd\d{3,}$` | Cooldown identifier (e.g., `cd001`) |
 | `date` | string | **Yes** | ISO 8601 date | Cooldown date (`YYYY-MM-DD`) |
-| `fridge` | string | **Yes** | — | Fridge name |
+| `cryo` | string | **Yes** | — | Cryostat name |
 | `operator` | string | No | — | Operator name |
 | `purpose` | string | No | — | Purpose of the cooldown |
 | `notes` | string | No | — | Notes |
@@ -22,7 +22,7 @@ Additional properties are **not allowed**.
 ```yaml
 cooldown_id: cd001
 date: 2026-03-01
-fridge: BlueFors-LD400
+cryo: BlueFors-LD400
 operator: Alice
 purpose: Qubit characterization run
 notes: Replaced attenuator on C03 at 4K stage.

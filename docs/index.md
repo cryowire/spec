@@ -37,13 +37,13 @@ Exhaustive field-level definitions for each YAML file.
 Data repositories follow this structure:
 
 ```text
-my-fridge-data/
+my-cryo-data/
 ├── components.yaml              # Component catalog
 ├── templates/                   # Module templates
 │   ├── control_module.yaml
 │   ├── readout_send_module.yaml
 │   └── readout_return_module.yaml
-├── <fridge-name>/
+├── <cryo-name>/
 │   ├── chip.yaml                # Chip information
 │   ├── current/                 # Working cooldown
 │   │   ├── metadata.yaml

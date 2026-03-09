@@ -3,13 +3,13 @@
 Data repositories follow this structure:
 
 ```text
-my-fridge-data/
+my-cryo-data/
 ├── components.yaml              # Component catalog
 ├── templates/
 │   ├── control_module.yaml      # Control line module template
 │   ├── readout_send_module.yaml # Readout send line module template
 │   └── readout_return_module.yaml # Readout return line module template
-├── <fridge-name>/
+├── <cryo-name>/
 │   ├── chip.yaml                # Chip information
 │   ├── current/                 # Working cooldown
 │   │   ├── metadata.yaml
@@ -30,4 +30,4 @@ my-fridge-data/
 - **`current/`** — The active cooldown configuration being worked on
 - **`<YYYY-NNN>/`** — Immutable snapshots of past cooldowns (e.g., `2026-001`)
 - **`chip.yaml`** — Chip metadata (name, number of qubits)
-- **`metadata.yaml`** — Cooldown metadata (ID, date, fridge, operator, purpose)
+- **`metadata.yaml`** — Cooldown metadata (ID, date, cryo, operator, purpose)

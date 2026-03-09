@@ -3,7 +3,7 @@
   "title": "Cooldown Metadata",
   "description": "Schema for defining dilution refrigerator cooldown metadata",
   "type": "object",
-  "required": ["cooldown_id", "date", "fridge"],
+  "required": ["cooldown_id", "date", "cryo"],
   "properties": {
     "cooldown_id": {
       "type": "string",
@@ -15,9 +15,9 @@
       "format": "date",
       "description": "Cooldown date (YYYY-MM-DD)"
     },
-    "fridge": {
+    "cryo": {
       "type": "string",
-      "description": "Fridge name"
+      "description": "Cryostat name"
     },
     "operator": {
       "type": "string",
